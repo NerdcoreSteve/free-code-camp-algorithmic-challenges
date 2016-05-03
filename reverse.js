@@ -1,3 +1,3 @@
-var R = require('ramda')
+var R = require("ramda")
 
 module.exports = R.reverse
