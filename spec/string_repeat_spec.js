@@ -1,18 +1,17 @@
 describe('title_case', () => {
-    /*
     const
-        titleCase = require('../title_case.js')
+        repeatStringNumTimes = require('../string_repeat.js')
 
-    it('titleCase(\'I\'m a little tea pot\') should return a string.',
-        () => expect(typeof titleCase('I\'m a little tea pot')).toEqual('string'))
+    it('repeatStringNumTimes(\'*\', 3) should return \'***\'.',
+        () => expect(repeatStringNumTimes('*', 3)).toEqual('***'))
 
-    it('titleCase(\'I\'m a little tea pot\') should return \'I\'m A Little Tea Pot\'.',
-        () => expect(titleCase('I\'m a little tea pot')).toEqual('I\'m A Little Tea Pot'))
+    it('repeatStringNumTimes(\'abc\', 3) should return \'abcabcabc\'.',
+        () => expect(repeatStringNumTimes('abc', 3)).toEqual('abcabcabc'))
+    /*
 
-    it('titleCase(\'sHoRt AnD sToUt\') should return \'Short And Stout\'.',
-        () => expect(titleCase('sHoRt AnD sToUt')).toEqual('Short And Stout'))
-
-    it('titleCase(\'HERE IS MY HANDLE HERE IS MY SPOUT\') should return \'Here Is My Handle Here Is My Spout\'.',
-        () => expect(titleCase('HERE IS MY HANDLE HERE IS MY SPOUT')).toEqual('Here Is My Handle Here Is My Spout'))
+repeatStringNumTimes(\'abc\', 4) should return \'abcabcabcabc\'.
+repeatStringNumTimes(\'abc\', 1) should return \'abc\'.
+repeatStringNumTimes(\'*\', 8) should return \'********\'.
+repeatStringNumTimes(\'abc\', -2) should return \'\'.
     */
 })
