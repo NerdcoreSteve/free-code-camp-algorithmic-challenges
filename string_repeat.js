@@ -8,5 +8,5 @@ module.exports = (str, n) =>
         .map(R.range(0))
         .map(R.map(() => str))
         .map(R.join(''))
-        .get()
+        .fold(x => x, x => x)
     

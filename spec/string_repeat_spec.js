@@ -7,11 +7,16 @@ describe('title_case', () => {
 
     it('repeatStringNumTimes(\'abc\', 3) should return \'abcabcabc\'.',
         () => expect(repeatStringNumTimes('abc', 3)).toEqual('abcabcabc'))
-    /*
 
-repeatStringNumTimes(\'abc\', 4) should return \'abcabcabcabc\'.
-repeatStringNumTimes(\'abc\', 1) should return \'abc\'.
-repeatStringNumTimes(\'*\', 8) should return \'********\'.
-repeatStringNumTimes(\'abc\', -2) should return \'\'.
-    */
+    it('repeatStringNumTimes(\'abc\', 4) should return \'abcabcabcabc\'.',
+        () => expect(repeatStringNumTimes('abc', 4)).toEqual('abcabcabcabc'))
+
+    it('repeatStringNumTimes(\'abc\', 1) should return \'abc\'.',
+        () => expect(repeatStringNumTimes('abc', 1)).toEqual('abc'))
+
+    it('repeatStringNumTimes(\'*\', 8) should return \'********\'.',
+        () => expect(repeatStringNumTimes('*', 8)).toEqual('********'))
+
+    it('repeatStringNumTimes(\'abc\', -2) should return \'\'.',
+        () => expect(repeatStringNumTimes('abc', -2)).toEqual(''))
 })
