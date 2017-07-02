@@ -9,4 +9,3 @@ module.exports = (str, n) =>
         .map(R.map(() => str))
         .map(R.join(''))
         .fold(x => x, x => x)
-    
