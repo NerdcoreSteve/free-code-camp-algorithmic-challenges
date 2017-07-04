@@ -5,6 +5,6 @@ const
 
 module.exports = (str, n) =>
     shortEnough(str, n)
-        .map(R.slice(0, n - 3))
+        .map(R.slice(0, n > 3 ? n - 3 : n))
         .map(R.concat(R.__, '...'))
         .fold(x => x, x => x)
