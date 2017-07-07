@@ -22,6 +22,7 @@
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "no-unexpected-multiline": 0
     }
 }
