@@ -13,5 +13,5 @@ const
 
 module.exports = R.pipe(
     R.split(''),
-    R.map(c => c.match(/[A-Z]/gi) ? decode(c) : c),
+    R.map(c => c.match(/[A-Z]/g) ? decode(c) : c),
     R.join(''))
