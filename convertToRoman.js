@@ -75,12 +75,12 @@ const
         R.range(0, width - arr.length).map(() => '0').concat(arr))
 
 module.exports = 
-    R.compose(
-        R.join(''),
-        fourth_converter,
-        third_converter,
-        second_converter,
-        first_converter,
-        leading_zeroes(places),
+    R.pipe(
+        n => n.toString(),
         R.split(''),
-        n => n.toString())
+        leading_zeroes(places),
+        first_converter,
+        second_converter,
+        third_converter,
+        fourth_converter,
+        R.join(''))
