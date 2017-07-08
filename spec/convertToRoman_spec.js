@@ -4,9 +4,13 @@ describe('convertToRoman', () => {
 
     it('convertToRoman(2) should return \'II\'.',
         () => expect(convertToRoman(2)).toEqual('II'))
+
+    it('convertToRoman(3) should return \'III\'.',
+        () => expect(convertToRoman(3)).toEqual('III'))
+
+    it('convertToRoman(4) should return \'IV\'.',
+        () => expect(convertToRoman(4)).toEqual('IV'))
     /*
-convertToRoman(3) should return \'III\'.
-convertToRoman(4) should return \'IV\'.
 convertToRoman(5) should return \'V\'.
 convertToRoman(9) should return \'IX\'.
 convertToRoman(12) should return \'XII\'.
