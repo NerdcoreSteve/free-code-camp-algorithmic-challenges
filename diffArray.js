@@ -1,4 +1,7 @@
 const
-    R = require('ramda')
+    xor = (a, b) => (a || b) && !(a && b)
 
-module.exports = () => R.always([])()
+module.exports = (xs, ys) => xs
+    .concat(ys)
+    .filter(x => xor(xs.includes(x), ys.includes(x)))
+    .sort()
