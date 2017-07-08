@@ -5,9 +5,7 @@ const
     places = 4,
     converter_factory = (conversion_map, places, place) =>
         R.adjust(
-            function (digit) {
-                return conversion_map[digit]
-            },
+            digit => conversion_map[digit],
             places - place),
     first_converter =
         converter_factory(
