@@ -37,24 +37,20 @@ const
         '7': 'DCC',
         '8': 'DCCC',
         '9': 'CM'
-    },
-    leading_zeroes = width => xs =>
-        R.pipe(
-            xs => width - xs.length,
-            R.range(0),
-            R.map(() => '0'),
-            R.concat(R.__, xs))
-                (xs),
-    repeat_string = str => n =>
-        R.pipe(R.repeat(str), R.join(''))(n)
+    }
 
 module.exports = 
     R.pipe(
         R.toString,
         R.split(''),
-        leading_zeroes(4),
-        R.adjust(x => ones_table[x], 3),
-        R.adjust(x => twos_table[x], 2),
-        R.adjust(x => threes_table[x], 1),
-        R.adjust(repeat_string('M'), 0),
+        R.reverse,
+        R.adjust(x => ones_table[x], 0),
+        R.adjust(x => twos_table[x], 1),
+        R.adjust(x => threes_table[x], 2),
+        R.adjust(
+            R.pipe(
+                R.repeat('M'),
+                R.join('')),
+            3),
+        R.reverse,
         R.join(''))
