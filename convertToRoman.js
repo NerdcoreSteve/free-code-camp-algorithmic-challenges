@@ -34,7 +34,10 @@ const
             R.concat(R.__, xs))
                 (xs),
     repeat_string = str => n =>
-        R.pipe(R.repeat(str), R.join(''))(n),
+        R.pipe(
+            R.repeat(str),
+            R.join(''))
+                (n),
     ones = R.cond([
         [R.equals('0'), () => ''],
         [R.equals('1'), () => 'I'],
