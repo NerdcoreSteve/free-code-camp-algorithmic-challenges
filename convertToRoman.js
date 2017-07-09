@@ -38,13 +38,15 @@ const
             R.repeat(str),
             R.join(''))
                 (n),
+    convert_repeat_string = str => s =>
+        R.pipe(
+            parseInt,
+            repeat_string(str))
+                (s),
     ones = R.cond([
-        [R.equals('0'), () => ''],
-        [R.equals('1'), () => 'I'],
-        [R.equals('2'), () => 'II'],
-        [R.equals('3'), () => 'III'],
+        [s => s <= '3', convert_repeat_string('I')],
         [R.equals('4'), () => 'IV'],
-        [R.equals('5'), () => 'V'],
+        [s => s <= '5', () => 'V'],
         [R.equals('6'), () => 'VI'],
         [R.equals('7'), () => 'VII'],
         [R.equals('8'), () => 'VIII'],
