@@ -36,7 +36,10 @@ const
     repeat_string = str => n =>
         R.pipe(R.repeat(str), R.join(''))(n),
     ones = R.cond([
-        [R.lte('3'), repeat_string('I')],
+        [R.equals('0'), () => ''],
+        [R.equals('1'), () => 'I'],
+        [R.equals('2'), () => 'II'],
+        [R.equals('3'), () => 'III'],
         [R.equals('4'), () => 'IV'],
         [R.equals('5'), () => 'V'],
         [R.equals('6'), () => 'VI'],
