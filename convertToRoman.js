@@ -2,6 +2,18 @@ const
     R = require('ramda')
 
 const
+    ones_table = {
+        '0': '',
+        '1': 'I',
+        '2': 'II',
+        '3': 'III',
+        '4': 'IV',
+        '5': 'V',
+        '6': 'VI',
+        '7': 'VII',
+        '8': 'VIII',
+        '9': 'IX'
+    },
     twos_table = {
         '0': '',
         '1': 'X',
@@ -34,33 +46,15 @@ const
             R.concat(R.__, xs))
                 (xs),
     repeat_string = str => n =>
-        R.pipe(
-            R.repeat(str),
-            R.join(''))
-                (n),
-    convert_repeat_string = str => s =>
-        R.pipe(
-            parseInt,
-            repeat_string(str))
-                (s),
-    ones = R.cond([
-        [s => s <= '3', convert_repeat_string('I')],
-        [R.equals('4'), () => 'IV'],
-        [s => s <= '5', () => 'V'],
-        [R.equals('6'), () => 'VI'],
-        [R.equals('7'), () => 'VII'],
-        [R.equals('8'), () => 'VIII'],
-        [R.equals('9'), () => 'IX']
-    ]),
-    fours = repeat_string('M')
+        R.pipe(R.repeat(str), R.join(''))(n)
 
 module.exports = 
     R.pipe(
         n => n.toString(),
         R.split(''),
         leading_zeroes(4),
-        R.adjust(ones, 3),
+        R.adjust(x => ones_table[x], 3),
         R.adjust(x => twos_table[x], 2),
         R.adjust(x => threes_table[x], 1),
-        R.adjust(fours, 0),
+        R.adjust(repeat_string('M'), 0),
         R.join(''))
