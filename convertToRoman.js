@@ -35,19 +35,18 @@ const
                 (xs),
     repeat_string = str => n =>
         R.pipe(R.repeat(str), R.join(''))(n),
-    ones_table = {
-        '0': '',
-        '1': 'I',
-        '2': 'II',
-        '3': 'III',
-        '4': 'IV',
-        '5': 'V',
-        '6': 'VI',
-        '7': 'VII',
-        '8': 'VIII',
-        '9': 'IX'
-    },
-    ones = n => ones_table[n],
+    ones = R.cond([
+        [R.equals('0'), () => ''],
+        [R.equals('1'), () => 'I'],
+        [R.equals('2'), () => 'II'],
+        [R.equals('3'), () => 'III'],
+        [R.equals('4'), () => 'IV'],
+        [R.equals('5'), () => 'V'],
+        [R.equals('6'), () => 'VI'],
+        [R.equals('7'), () => 'VII'],
+        [R.equals('8'), () => 'VIII'],
+        [R.equals('9'), () => 'IX']
+    ]),
     fours = repeat_string('M')
 
 module.exports = 
