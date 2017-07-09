@@ -50,7 +50,7 @@ const
 
 module.exports = 
     R.pipe(
-        n => n.toString(),
+        R.toString,
         R.split(''),
         leading_zeroes(4),
         R.adjust(x => ones_table[x], 3),
