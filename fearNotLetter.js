@@ -7,7 +7,8 @@ module.exports =
         R.map(x => x.charCodeAt(0)),
         R.sort(R.subtract),
         xs => R.pipe(
-            xs => [[null].concat(xs), xs],
+            R.prepend(null),
+            ys => [ys, xs],
             R.transpose,
             R.slice(1, -1))
                 (xs),
