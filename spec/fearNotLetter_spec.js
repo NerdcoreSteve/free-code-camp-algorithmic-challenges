@@ -8,6 +8,9 @@ describe('fearNotLetter', () => {
     it('fearNotLetter(\'abcdefghjklmno\') should return \'i\'.',
         () => expect(fearNotLetter('abcdefghjklmno')).toEqual('i'))
 
+    it('fearNotLetter(\'klmnoabdefgh\') should return \'ij\'.',
+        () => expect(fearNotLetter('klmnoabdefgh')).toEqual('cij'))
+
     it('fearNotLetter(\'bcd\') should return undefined.',
         () => expect(fearNotLetter('bcd')).toEqual(undefined))
 
